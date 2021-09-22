@@ -5,13 +5,9 @@ import jwtPlugin from '../plugins/jwtPlugin';
 import routes from '../routes';
 
 export default class Fastify {
-  private server!: FastifyInstance;
+  private server: FastifyInstance;
 
   constructor() {
-    this.setup();
-  }
-
-  private setup() {
     this.server = fastify({ logger: true });
     this.server.register(corsPlugin, {
       origin: (origin, callback) => {

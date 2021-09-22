@@ -9,7 +9,7 @@ import schema from '../graphql/schema';
 import { isProduction } from '../constants';
 
 export default class Apollo {
-  private server!: ApolloServer;
+  private server: ApolloServer;
 
   constructor(fastify: FastifyInstance) {
     this.server = new ApolloServer({
