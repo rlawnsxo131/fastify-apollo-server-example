@@ -42,8 +42,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["apollo-server-core", "virtual:69391317673f36169ebde01533e52bdfae6c9f8a9eb58919b053a28e2d698694f58b0c0fddffa13e8f45d9771a3d2bdbb501e346fe3548e761bc6aa824c636e9#npm:3.3.0"],
             ["apollo-server-fastify", "virtual:69391317673f36169ebde01533e52bdfae6c9f8a9eb58919b053a28e2d698694f58b0c0fddffa13e8f45d9771a3d2bdbb501e346fe3548e761bc6aa824c636e9#npm:3.3.0"],
             ["dotenv", "npm:10.0.0"],
-            ["fastify", "npm:3.21.4"],
+            ["fastify", "npm:3.21.5"],
             ["fastify-compress", "npm:3.6.0"],
+            ["fastify-cors", "npm:6.0.2"],
             ["fastify-plugin", "npm:3.0.0"],
             ["graphql", "npm:15.6.0"],
             ["lodash.merge", "npm:4.6.2"],
@@ -681,7 +682,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["apollo-server-core", "virtual:69391317673f36169ebde01533e52bdfae6c9f8a9eb58919b053a28e2d698694f58b0c0fddffa13e8f45d9771a3d2bdbb501e346fe3548e761bc6aa824c636e9#npm:3.3.0"],
             ["apollo-server-types", "virtual:492ae58e02e1e771ea1afc7fcc9e021c203e6b53a76523482f150a2e0da829cfeeb573ea21186be6fb06a046f213bc788237ff34dbb91fea140ccaf74b25f4e9#npm:3.2.0"],
             ["fast-json-stringify", "npm:2.7.10"],
-            ["fastify", "npm:3.21.4"],
+            ["fastify", "npm:3.21.5"],
             ["fastify-accepts", "npm:2.0.1"],
             ["fastify-cors", "npm:6.0.2"],
             ["graphql", "npm:15.6.0"]
@@ -1073,8 +1074,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["apollo-server-core", "virtual:69391317673f36169ebde01533e52bdfae6c9f8a9eb58919b053a28e2d698694f58b0c0fddffa13e8f45d9771a3d2bdbb501e346fe3548e761bc6aa824c636e9#npm:3.3.0"],
             ["apollo-server-fastify", "virtual:69391317673f36169ebde01533e52bdfae6c9f8a9eb58919b053a28e2d698694f58b0c0fddffa13e8f45d9771a3d2bdbb501e346fe3548e761bc6aa824c636e9#npm:3.3.0"],
             ["dotenv", "npm:10.0.0"],
-            ["fastify", "npm:3.21.4"],
+            ["fastify", "npm:3.21.5"],
             ["fastify-compress", "npm:3.6.0"],
+            ["fastify-cors", "npm:6.0.2"],
             ["fastify-plugin", "npm:3.0.0"],
             ["graphql", "npm:15.6.0"],
             ["lodash.merge", "npm:4.6.2"],
@@ -1301,10 +1303,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["fastify", [
-        ["npm:3.21.4", {
-          "packageLocation": "./.yarn/cache/fastify-npm-3.21.4-2ed2d434af-1d7bb8ecf6.zip/node_modules/fastify/",
+        ["npm:3.21.5", {
+          "packageLocation": "./.yarn/cache/fastify-npm-3.21.5-55f8fc465b-dca084de52.zip/node_modules/fastify/",
           "packageDependencies": [
-            ["fastify", "npm:3.21.4"],
+            ["fastify", "npm:3.21.5"],
             ["@fastify/ajv-compiler", "npm:1.1.0"],
             ["abstract-logging", "npm:2.0.1"],
             ["avvio", "npm:7.2.2"],

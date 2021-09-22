@@ -1,5 +1,7 @@
 import fastify, { FastifyInstance } from 'fastify';
 import compress from 'fastify-compress';
+import corsPlugin from 'fastify-cors';
+import jwtPlugin from '../plugins/jwtPlugin';
 import routes from '../routes';
 
 export default class Fastify {
@@ -11,7 +13,19 @@ export default class Fastify {
 
   private setup() {
     this.server = fastify({ logger: true });
+    this.server.register(corsPlugin, {
+      origin: (origin, callback) => {
+        if (!origin) {
+          return callback(null, true);
+        }
+        const allowedHost = [/^http\:\/\/localhost/];
+        const allowed = allowedHost.some((regex) => regex.test(origin));
+        callback(null, allowed);
+      },
+      credentials: true,
+    });
     this.server.register(compress);
+    this.server.register(jwtPlugin);
     this.server.register(routes, { prefix: '/api' });
   }
 
