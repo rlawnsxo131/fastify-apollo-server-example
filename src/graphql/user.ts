@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server-core';
+import { gql } from 'apollo-server-fastify';
 import { IResolvers } from '@graphql-tools/utils';
 
 export const typeDef = gql`
