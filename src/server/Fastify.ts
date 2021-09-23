@@ -5,11 +5,11 @@ import jwtPlugin from '../plugins/jwtPlugin';
 import routes from '../routes';
 
 export default class Fastify {
-  private server: FastifyInstance;
+  private app: FastifyInstance;
 
   constructor() {
-    this.server = fastify({ logger: true });
-    this.server.register(corsPlugin, {
+    this.app = fastify({ logger: true });
+    this.app.register(corsPlugin, {
       origin: (origin, callback) => {
         if (!origin) {
           return callback(null, true);
@@ -20,25 +20,24 @@ export default class Fastify {
       },
       credentials: true,
     });
-    this.server.register(compress);
-    this.server.register(jwtPlugin);
-    this.server.register(routes, { prefix: '/api' });
+    this.app.register(compress);
+    this.app.register(jwtPlugin);
+    this.app.register(routes, { prefix: '/api' });
   }
 
-  async start() {
-    try {
-      await this.server.listen(process.env.PORT!);
-    } catch (e) {
-      this.server.log.error(e);
-      process.exit(1);
-    }
+  start() {
+    return this.app.listen(process.env.PORT!);
+  }
+
+  close() {
+    return this.app.close();
   }
 
   getServer() {
-    return this.server;
+    return this.app;
   }
 
-  registerApollo(apolloHandler: (app: FastifyInstance) => Promise<void>) {
-    this.server.register(apolloHandler);
+  registerApollo(apolloHandler: (fastify: FastifyInstance) => Promise<void>) {
+    this.app.register(apolloHandler);
   }
 }

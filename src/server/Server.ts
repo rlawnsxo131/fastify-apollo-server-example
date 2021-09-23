@@ -3,21 +3,33 @@ import initializeEnvironment from '../lib/initializeEnvironment';
 import Apollo from './Apollo';
 
 export default class Server {
-  private server!: Fastify;
+  private fastify: Fastify;
+  private apollo: Apollo;
 
   constructor() {
-    this.setup();
+    initializeEnvironment();
+    this.fastify = new Fastify();
+    this.apollo = new Apollo(this.fastify.getServer());
   }
 
-  private setup() {
-    initializeEnvironment();
-    this.server = new Fastify();
+  async setup() {
+    await this.apollo.start();
+    this.fastify.registerApollo(this.apollo.createHandler());
   }
 
   async start() {
-    const apollo = new Apollo(this.server.getServer());
-    await apollo.start();
-    this.server.registerApollo(apollo.createHandler());
-    await this.server.start();
+    try {
+      await this.fastify.start();
+    } catch (e) {
+      this.fastify.getServer().log.error(e);
+      process.exit(1);
+    }
+  }
+
+  getServer() {
+    return {
+      fasitfy: this.fastify,
+      apollo: this.apollo,
+    };
   }
 }

@@ -15,5 +15,5 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "outDir": "./dist",
-  },
+  }
 }

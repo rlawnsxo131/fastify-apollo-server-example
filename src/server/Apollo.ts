@@ -9,10 +9,10 @@ import schema from '../graphql/schema';
 import { isProduction } from '../constants';
 
 export default class Apollo {
-  private server: ApolloServer;
+  private app: ApolloServer;
 
   constructor(fastify: FastifyInstance) {
-    this.server = new ApolloServer({
+    this.app = new ApolloServer({
       schema,
       context:
         ({ request }) =>
@@ -30,32 +30,27 @@ export default class Apollo {
     });
   }
 
-  private fastifyAppClosePlugin(app: FastifyInstance) {
+  private fastifyAppClosePlugin(fasitify: FastifyInstance) {
     return {
       async serverWillStart() {
         return {
           async drainServer() {
-            await app.close();
+            await fasitify.close();
           },
         };
       },
     };
   }
 
-  async start() {
-    try {
-      await this.server.start();
-    } catch (e) {
-      console.log('apollo server start crash');
-      console.error(e);
-    }
+  start() {
+    return this.app.start();
   }
 
   getServer() {
-    return this.server;
+    return this.app;
   }
 
   createHandler() {
-    return this.server.createHandler();
+    return this.app.createHandler();
   }
 }
