@@ -1,4 +1,4 @@
 export const isProduction = process.env.NODE_ENV === 'production';
-export const environment = isProduction
+export const environmentFilename = isProduction
   ? '.env.production'
   : '.env.development';
