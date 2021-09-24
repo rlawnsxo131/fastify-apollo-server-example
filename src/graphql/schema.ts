@@ -1,7 +1,8 @@
 import { gql } from 'apollo-server-fastify';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import merge from 'lodash.merge';
-import * as user from './user';
+import { userGraphql } from '../modules/user';
+import { dataGraphql } from '../modules/data';
 
 const typeDef = gql`
   scalar Date
@@ -21,8 +22,8 @@ const resolvers = {
 };
 
 const schema = makeExecutableSchema({
-  typeDefs: [typeDef, user.typeDef],
-  resolvers: merge(resolvers, user.resolvers),
+  typeDefs: [typeDef, userGraphql.typeDef, dataGraphql.typeDef],
+  resolvers: merge(resolvers, userGraphql.resolvers, dataGraphql.resolvers),
 });
 
 export default schema;

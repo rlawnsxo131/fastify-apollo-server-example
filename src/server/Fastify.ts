@@ -25,16 +25,16 @@ export default class Fastify {
     this.app.register(routes, { prefix: '/api' });
   }
 
+  getApp() {
+    return this.app;
+  }
+
   start() {
     return this.app.listen(process.env.PORT!);
   }
 
   close() {
     return this.app.close();
-  }
-
-  getServer() {
-    return this.app;
   }
 
   registerApollo(apolloHandler: (fastify: FastifyInstance) => Promise<void>) {

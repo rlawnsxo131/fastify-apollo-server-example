@@ -5,7 +5,7 @@ import {
   ApolloServerPluginLandingPageGraphQLPlayground,
 } from 'apollo-server-core';
 import { FastifyInstance } from 'fastify';
-import schema from '../graphql/schema';
+import { schema } from '../graphql';
 import { isProduction } from '../constants';
 
 export default class Apollo {
@@ -14,12 +14,9 @@ export default class Apollo {
   constructor(fastify: FastifyInstance) {
     this.app = new ApolloServer({
       schema,
-      context:
-        ({ request }) =>
-        () => {
-          console.log('url: ', request.url);
-          console.log('method: ', request.method);
-        },
+      // context: ({ request }) => {
+      //   console.log(request.protocol);
+      // },
       plugins: [
         this.fastifyAppClosePlugin(fastify),
         ApolloServerPluginDrainHttpServer({ httpServer: fastify.server }),
@@ -30,27 +27,27 @@ export default class Apollo {
     });
   }
 
-  private fastifyAppClosePlugin(fasitify: FastifyInstance) {
+  private fastifyAppClosePlugin(fastify: FastifyInstance) {
     return {
       async serverWillStart() {
         return {
           async drainServer() {
-            await fasitify.close();
+            await fastify.close();
           },
         };
       },
     };
   }
 
+  getApp() {
+    return this.app;
+  }
+
   start() {
     return this.app.start();
   }
 
-  getServer() {
-    return this.app;
-  }
-
   createHandler() {
-    return this.app.createHandler();
+    return this.app.createHandler({ cors: false });
   }
 }

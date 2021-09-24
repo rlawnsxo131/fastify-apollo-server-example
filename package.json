@@ -3,7 +3,7 @@
   "scripts": {
     "sdk": "yarn dlx @yarnpkg/sdks vscode",
     "sdk:update": "yarn dlx @yarnpkg/sdks",
-    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only ./src/index.ts | pino-pretty -c -t"
+    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only ./src/index.ts | pino-pretty -l -c -t SYS:standard"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.2.0",
@@ -15,7 +15,9 @@
     "fastify-cors": "^6.0.2",
     "fastify-plugin": "^3.0.0",
     "graphql": "^15.6.0",
-    "lodash.merge": "^4.6.2"
+    "lodash.merge": "^4.6.2",
+    "mysql2": "^2.3.0",
+    "typeorm": "^0.2.37"
   },
   "devDependencies": {
     "@types/lodash.merge": "^4.6.6",

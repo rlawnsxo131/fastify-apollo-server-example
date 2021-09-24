@@ -9,7 +9,7 @@ export default class Server {
   constructor() {
     initializeEnvironment();
     this.fastify = new Fastify();
-    this.apollo = new Apollo(this.fastify.getServer());
+    this.apollo = new Apollo(this.fastify.getApp());
   }
 
   async setup() {
@@ -21,7 +21,7 @@ export default class Server {
     try {
       await this.fastify.start();
     } catch (e) {
-      this.fastify.getServer().log.error(e);
+      this.fastify.getApp().log.error(e);
       process.exit(1);
     }
   }
