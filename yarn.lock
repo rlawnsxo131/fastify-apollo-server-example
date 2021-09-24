@@ -931,6 +931,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie-signature@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "cookie-signature@npm:1.1.0"
+  checksum: 1586cb0a89d79354ca64dce661ac44959e46482faab756f49e71d086052c6de8b82fe8dd1bfb7ec1658afab8585c44c931d9cb441eab9b8fed8edbd140b2b0c5
+  languageName: node
+  linkType: hard
+
 "cookie@npm:^0.4.0":
   version: 0.4.1
   resolution: "cookie@npm:0.4.1"
@@ -979,6 +986,7 @@ __metadata:
     dotenv: ^10.0.0
     fastify: 3.21.5
     fastify-compress: ^3.6.0
+    fastify-cookie: ^5.3.1
     fastify-cors: ^6.0.2
     fastify-plugin: ^3.0.0
     graphql: ^15.6.0
@@ -1238,6 +1246,17 @@ __metadata:
     string-to-stream: ^3.0.0
     unzipper: ^0.10.8
   checksum: 0e3e21e0d288cdde4f9340e29673602fa8dd12f18c49b6fb744ec8fdf0fb8329d464cfb4f37006fd7e36f472266ee7f1acc647f3f4909832dbc61640461ec627
+  languageName: node
+  linkType: hard
+
+"fastify-cookie@npm:^5.3.1":
+  version: 5.3.1
+  resolution: "fastify-cookie@npm:5.3.1"
+  dependencies:
+    cookie: ^0.4.0
+    cookie-signature: ^1.1.0
+    fastify-plugin: ^3.0.0
+  checksum: 1b09b1c73e8a109dcbfc564a354772e86d761b8b532f77b0cdd61b02eb9cde77cb02abf630adab4936ef83e601608e94a80e4f00d7d445d423beedcd6bdfa46b
   languageName: node
   linkType: hard
 

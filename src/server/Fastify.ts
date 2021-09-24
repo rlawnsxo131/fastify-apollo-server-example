@@ -1,6 +1,7 @@
 import fastify, { FastifyInstance } from 'fastify';
 import compress from 'fastify-compress';
 import corsPlugin from 'fastify-cors';
+import cookie from 'fastify-cookie';
 import jwtPlugin from '../plugins/jwtPlugin';
 import routes from '../routes';
 
@@ -20,6 +21,7 @@ export default class Fastify {
       },
       credentials: true,
     });
+    this.app.register(cookie);
     this.app.register(compress);
     this.app.register(jwtPlugin);
     this.app.register(routes, { prefix: '/api' });

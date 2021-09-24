@@ -44,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:10.0.0"],
             ["fastify", "npm:3.21.5"],
             ["fastify-compress", "npm:3.6.0"],
+            ["fastify-cookie", "npm:5.3.1"],
             ["fastify-cors", "npm:6.0.2"],
             ["fastify-plugin", "npm:3.0.0"],
             ["graphql", "npm:15.6.0"],
@@ -1242,6 +1243,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["cookie-signature", [
+        ["npm:1.1.0", {
+          "packageLocation": "./.yarn/cache/cookie-signature-npm-1.1.0-f28f68ab67-1586cb0a89.zip/node_modules/cookie-signature/",
+          "packageDependencies": [
+            ["cookie-signature", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["core-js-pure", [
         ["npm:3.18.0", {
           "packageLocation": "./.yarn/unplugged/core-js-pure-npm-3.18.0-4ecbd5a9b2/node_modules/core-js-pure/",
@@ -1292,6 +1302,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["dotenv", "npm:10.0.0"],
             ["fastify", "npm:3.21.5"],
             ["fastify-compress", "npm:3.6.0"],
+            ["fastify-cookie", "npm:5.3.1"],
             ["fastify-cors", "npm:6.0.2"],
             ["fastify-plugin", "npm:3.0.0"],
             ["graphql", "npm:15.6.0"],
@@ -1628,6 +1639,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pumpify", "npm:2.0.1"],
             ["string-to-stream", "npm:3.0.1"],
             ["unzipper", "npm:0.10.11"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["fastify-cookie", [
+        ["npm:5.3.1", {
+          "packageLocation": "./.yarn/cache/fastify-cookie-npm-5.3.1-a56f7d75ff-1b09b1c73e.zip/node_modules/fastify-cookie/",
+          "packageDependencies": [
+            ["fastify-cookie", "npm:5.3.1"],
+            ["cookie", "npm:0.4.1"],
+            ["cookie-signature", "npm:1.1.0"],
+            ["fastify-plugin", "npm:3.0.0"]
           ],
           "linkType": "HARD",
         }]

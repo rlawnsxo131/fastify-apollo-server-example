@@ -12,6 +12,7 @@
     "apollo-server-fastify": "^3.3.0",
     "fastify": "3.21.5",
     "fastify-compress": "^3.6.0",
+    "fastify-cookie": "^5.3.1",
     "fastify-cors": "^6.0.2",
     "fastify-plugin": "^3.0.0",
     "graphql": "^15.6.0",

@@ -15,7 +15,7 @@ export default class Apollo {
     this.app = new ApolloServer({
       schema,
       // context: ({ request }) => {
-      //   console.log(request.protocol);
+      //   request.log.info(request.user);
       // },
       plugins: [
         this.fastifyAppClosePlugin(fastify),
