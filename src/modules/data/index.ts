@@ -1,2 +1,2 @@
-export { default as dataGraphql } from './data.graphql';
-export { default as dataService } from './data.service';
+export * as dataGraphql from './data.graphql';
+export * as dataService from './data.service';

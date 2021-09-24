@@ -2,7 +2,7 @@ import { IResolvers } from '@graphql-tools/utils';
 import { gql } from 'apollo-server-core';
 import { dataService } from '.';
 
-const typeDef = gql`
+export const typeDef = gql`
   type Data {
     id: Int!
     data: [Int]
@@ -12,7 +12,7 @@ const typeDef = gql`
   }
 `;
 
-const resolvers: IResolvers = {
+export const resolvers: IResolvers = {
   Query: {
     data: async (parent, args, context) => {
       const { id } = args;
@@ -21,10 +21,3 @@ const resolvers: IResolvers = {
     },
   },
 };
-
-const dataGraphql = {
-  typeDef,
-  resolvers,
-};
-
-export default dataGraphql;
