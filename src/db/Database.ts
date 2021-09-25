@@ -6,6 +6,7 @@ import {
   createConnection,
 } from 'typeorm';
 import { isProduction } from '../constants';
+import { userEntity } from '../modules/user';
 
 export default class Database {
   private connectionManager: ConnectionManager;
@@ -31,7 +32,7 @@ export default class Database {
         connectionLimit: 10,
       },
       synchronize: false,
-      entities: [],
+      entities: [userEntity],
     };
 
     return createConnection(connectionOptions);

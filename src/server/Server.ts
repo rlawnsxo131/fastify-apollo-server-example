@@ -1,5 +1,4 @@
 import Fastify from './Fastify';
-import initializeEnvironment from '../lib/initializeEnvironment';
 import Apollo from './Apollo';
 
 export default class Server {
@@ -7,7 +6,6 @@ export default class Server {
   private apollo: Apollo;
 
   constructor() {
-    initializeEnvironment();
     this.fastify = new Fastify();
     this.apollo = new Apollo(this.fastify.getApp());
   }
