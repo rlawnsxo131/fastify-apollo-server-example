@@ -1,12 +1,12 @@
 # data-visualizer-server
 
-## prepare mariaDB databse
+## Prepare mariaDB Databse
 ```shell
 $ cd ./docker
 $ docker compose up -d
 ```
 
-## start
+## Start
 ```shell
 $ yarn start:dev
 ```
