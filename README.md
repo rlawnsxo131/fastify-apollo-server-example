@@ -1,6 +1,6 @@
 # data-visualizer-server
 
-## Prepare mariaDB Databse
+## Prepare MariaDB Databse
 ```shell
 $ cd ./docker
 $ docker compose up -d
