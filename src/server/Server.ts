@@ -12,6 +12,14 @@ export default class Server {
     this.apollo = new Apollo(this.fastify.getApp());
   }
 
+  getFastify() {
+    return this.fastify;
+  }
+
+  getApollo() {
+    return this.apollo;
+  }
+
   async setup() {
     await this.apollo.start();
     this.fastify.registerApollo(this.apollo.createHandler());
@@ -24,12 +32,5 @@ export default class Server {
       this.fastify.getApp().log.error(e);
       process.exit(1);
     }
-  }
-
-  getServer() {
-    return {
-      fasitfy: this.fastify,
-      apollo: this.apollo,
-    };
   }
 }

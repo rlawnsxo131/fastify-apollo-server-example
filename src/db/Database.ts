@@ -26,7 +26,7 @@ export default class Database {
       charset: 'utf8mb4_unicode_ci',
       connectTimeout: 10000,
       logging: isProduction ? ['error'] : ['query'],
-      // timezone: '-09:00',
+      timezone: 'Z',
       extra: {
         connectionLimit: 10,
       },

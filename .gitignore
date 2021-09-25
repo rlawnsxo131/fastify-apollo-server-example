@@ -9,6 +9,9 @@
 !/.yarn/cache
 #/.pnp.*
 
-# Environment
+# environment variable
 .env
 .env.production
+
+# docker
+/docker/mariadb/data

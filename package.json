@@ -3,7 +3,7 @@
   "scripts": {
     "sdk": "yarn dlx @yarnpkg/sdks vscode",
     "sdk:update": "yarn dlx @yarnpkg/sdks",
-    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only ./src/index.ts | pino-pretty -l -c -t SYS:standard"
+    "start:dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only ./src/index.ts | pino-pretty -l -c -t SYS:standard"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.2.0",
