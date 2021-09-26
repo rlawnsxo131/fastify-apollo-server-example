@@ -9,7 +9,14 @@ export default class Fastify {
   private app: FastifyInstance;
 
   constructor() {
-    this.app = fastify({ logger: true });
+    this.app = fastify({
+      logger: {
+        prettyPrint: {
+          colorize: true,
+          translateTime: 'SYS:standard',
+        },
+      },
+    });
     this.app.register(corsPlugin, {
       origin: (origin, callback) => {
         if (!origin) {

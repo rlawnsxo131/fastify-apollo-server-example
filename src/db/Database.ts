@@ -5,8 +5,8 @@ import {
   ConnectionOptions,
   createConnection,
 } from 'typeorm';
-import { isProduction } from '../constants';
-import { userEntity } from '../modules/user';
+import { User } from '../modules/user';
+import { Data } from '../modules/data';
 
 export default class Database {
   private connectionManager: ConnectionManager;
@@ -24,13 +24,13 @@ export default class Database {
       database: process.env.DB_DATABASE,
       charset: 'utf8mb4_unicode_ci',
       connectTimeout: 10000,
-      logging: isProduction ? ['error'] : ['query'],
+      logging: 'all',
       timezone: 'Z',
       extra: {
         connectionLimit: 10,
       },
       synchronize: false,
-      entities: [userEntity],
+      entities: [User, Data],
     };
   }
 

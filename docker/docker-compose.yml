@@ -6,7 +6,6 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./mariadb/conf.d:/etc/mysql/conf.d
       - ./mariadb/data:/var/lib/mysql
       - ./mariadb/initdb.d:/docker-entrypoint-initdb.d
     environment:
@@ -16,4 +15,5 @@ services:
       MYSQL_DATABASE: data-visualizer
       MYSQL_PASSWORD: 1234
       TZ: Asia/Seoul
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: always

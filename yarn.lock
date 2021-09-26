@@ -904,9 +904,9 @@ __metadata:
   linkType: hard
 
 "colorette@npm:^2.0.0":
-  version: 2.0.7
-  resolution: "colorette@npm:2.0.7"
-  checksum: 25512e8434baa8f61fc0e661f6c20fbf246106a29ea94bc857f2ab77c99c036307aed35a66f337cd3d4e72ce76aadae420cfada9613567996f8969d3b951c559
+  version: 2.0.12
+  resolution: "colorette@npm:2.0.12"
+  checksum: 1df990c6749826694756ecd05a771fb70fd426cf2b264cf496fb93a621fb4554fabfa8adde0923421f3e38b7265d546f6a46caf833f2d7facf45a40042b510b3
   languageName: node
   linkType: hard
 

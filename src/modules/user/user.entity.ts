@@ -3,9 +3,11 @@ import {
   CreateDateColumn,
   Entity,
   Index,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import Data from '../data/data.entity';
 
 @Entity('user')
 export default class User {
@@ -31,4 +33,7 @@ export default class User {
 
   @UpdateDateColumn({ type: 'timestamp' })
   updated_at!: Date;
+
+  @OneToMany((type) => Data, (data) => data.user)
+  datas!: Data[];
 }

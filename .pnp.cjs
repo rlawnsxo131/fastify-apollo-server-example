@@ -1199,10 +1199,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["colorette", [
-        ["npm:2.0.7", {
-          "packageLocation": "./.yarn/cache/colorette-npm-2.0.7-b187dc0539-25512e8434.zip/node_modules/colorette/",
+        ["npm:2.0.12", {
+          "packageLocation": "./.yarn/cache/colorette-npm-2.0.12-b5fce28207-1df990c674.zip/node_modules/colorette/",
           "packageDependencies": [
-            ["colorette", "npm:2.0.7"]
+            ["colorette", "npm:2.0.12"]
           ],
           "linkType": "HARD",
         }]
@@ -2851,7 +2851,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["pino-pretty", "npm:7.0.1"],
             ["args", "npm:5.0.1"],
-            ["colorette", "npm:2.0.7"],
+            ["colorette", "npm:2.0.12"],
             ["dateformat", "npm:4.6.3"],
             ["fast-safe-stringify", "npm:2.1.1"],
             ["joycon", "npm:3.0.1"],
