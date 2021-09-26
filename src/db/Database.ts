@@ -10,13 +10,11 @@ import { userEntity } from '../modules/user';
 
 export default class Database {
   private connectionManager: ConnectionManager;
+  private connectionOptions: ConnectionOptions;
 
   constructor() {
     this.connectionManager = getConnectionManager();
-  }
-
-  async connect() {
-    const connectionOptions: ConnectionOptions = {
+    this.connectionOptions = {
       name: 'default',
       type: 'mariadb',
       host: process.env.DB_HOST,
@@ -34,8 +32,10 @@ export default class Database {
       synchronize: false,
       entities: [userEntity],
     };
+  }
 
-    return createConnection(connectionOptions);
+  async connect() {
+    return createConnection(this.connectionOptions);
   }
 
   async getConnection(): Promise<Connection> {

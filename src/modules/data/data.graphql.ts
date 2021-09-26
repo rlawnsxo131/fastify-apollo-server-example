@@ -14,7 +14,7 @@ export const typeDef = gql`
 
 export const resolvers: IResolvers = {
   Query: {
-    data: async (parent, args, context) => {
+    data: async (parent, args) => {
       const { id } = args;
       const data = await dataService.findById(id);
       return data;
