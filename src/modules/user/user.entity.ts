@@ -9,7 +9,7 @@ import {
 
 @Entity('user')
 export default class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ unsigned: true })
   id!: number;
 
   @Index()
@@ -17,13 +17,13 @@ export default class User {
   email!: string;
 
   @Index()
-  @Column({ length: 16, nullable: true })
+  @Column({ length: 16, nullable: true, default: null })
   username?: string;
 
   @Column({ length: 48 })
   display_name!: string;
 
-  @Column({ length: 255, nullable: true })
+  @Column({ length: 255, nullable: true, default: null })
   photo_url?: string;
 
   @CreateDateColumn({ type: 'timestamp' })
