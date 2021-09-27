@@ -1,4 +1,4 @@
-# data-visualizer-server
+# fastify-apollo-server-example
 
 ## Prepare MariaDB Databse
 ```shell
