@@ -1,8 +1,9 @@
-export function findById(id: number) {
-  return new Promise((resolve) => {
-    resolve({
-      id,
-      data: [1, 2, 3, 4],
-    });
-  });
+import { FindOneOptions } from 'typeorm';
+import { Data } from '.';
+
+export default class DataService {
+  static async fincOne(key: FindOneOptions<Data>) {
+    const user = await Data.findOne(key);
+    return user;
+  }
 }

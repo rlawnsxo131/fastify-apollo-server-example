@@ -1,5 +1,5 @@
 {
-  "name": "data-visualizer-server",
+  "name": "fastify-apollo-server-example",
   "scripts": {
     "sdk": "yarn dlx @yarnpkg/sdks vscode",
     "sdk:update": "yarn dlx @yarnpkg/sdks",

@@ -1,4 +1,4 @@
-import { gql } from 'apollo-server-fastify';
+import { gql } from 'apollo-server-core';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import merge from 'lodash.merge';
 import { userGraphql } from '../modules/user';
