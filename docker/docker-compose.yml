@@ -12,7 +12,7 @@ services:
       MYSQL_HOST: localhost
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: 1234
-      MYSQL_DATABASE: data-visualizer
+      MYSQL_DATABASE: sample-app
       MYSQL_PASSWORD: 1234
       TZ: Asia/Seoul
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
