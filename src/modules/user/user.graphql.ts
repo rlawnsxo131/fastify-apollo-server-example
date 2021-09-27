@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-core';
 import { IResolvers } from '@graphql-tools/utils';
-import { userService } from '.';
+import { UserService } from '.';
 
 export const typeDef = gql`
   type User {
@@ -17,7 +17,7 @@ export const resolvers: IResolvers = {
   Query: {
     user: async (parent, args, context, info) => {
       const { id } = args;
-      const user = await userService.findById(id);
+      const user = await UserService.findOne(id);
       return user;
     },
   },

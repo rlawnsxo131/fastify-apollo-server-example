@@ -973,33 +973,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"data-visualizer-server@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "data-visualizer-server@workspace:."
-  dependencies:
-    "@graphql-tools/schema": ^8.2.0
-    "@graphql-tools/utils": ^8.2.3
-    "@types/lodash.merge": ^4.6.6
-    "@types/node": ^16.9.6
-    apollo-server-core: ^3.3.0
-    apollo-server-fastify: ^3.3.0
-    dotenv: ^10.0.0
-    fastify: 3.21.5
-    fastify-compress: ^3.6.0
-    fastify-cookie: ^5.3.1
-    fastify-cors: ^6.0.2
-    fastify-plugin: ^3.0.0
-    graphql: ^15.6.0
-    lodash.merge: ^4.6.2
-    mysql2: ^2.3.0
-    pino-pretty: ^7.0.1
-    prettier: ^2.4.1
-    ts-node-dev: ^1.1.8
-    typeorm: ^0.2.37
-    typescript: ^4.4.3
-  languageName: unknown
-  linkType: soft
-
 "dateformat@npm:^4.5.1":
   version: 4.6.3
   resolution: "dateformat@npm:4.6.3"
@@ -1226,6 +1199,33 @@ __metadata:
   checksum: 44d8276ce51bbf357efe3997b55aacffb72ecb1d260413ede5dba62f2b74beb851e41124b61386cfdb62b66bfef92d61f978122029203100edd57d1676438306
   languageName: node
   linkType: hard
+
+"fastify-apollo-server-example@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "fastify-apollo-server-example@workspace:."
+  dependencies:
+    "@graphql-tools/schema": ^8.2.0
+    "@graphql-tools/utils": ^8.2.3
+    "@types/lodash.merge": ^4.6.6
+    "@types/node": ^16.9.6
+    apollo-server-core: ^3.3.0
+    apollo-server-fastify: ^3.3.0
+    dotenv: ^10.0.0
+    fastify: 3.21.5
+    fastify-compress: ^3.6.0
+    fastify-cookie: ^5.3.1
+    fastify-cors: ^6.0.2
+    fastify-plugin: ^3.0.0
+    graphql: ^15.6.0
+    lodash.merge: ^4.6.2
+    mysql2: ^2.3.0
+    pino-pretty: ^7.0.1
+    prettier: ^2.4.1
+    ts-node-dev: ^1.1.8
+    typeorm: ^0.2.37
+    typescript: ^4.4.3
+  languageName: unknown
+  linkType: soft
 
 "fastify-compress@npm:^3.6.0":
   version: 3.6.0
