@@ -12,9 +12,13 @@ export const typeDef = gql`
   }
 `;
 
+interface DataArgs {
+  id: number;
+}
+
 export const resolvers: IResolvers = {
   Query: {
-    data: async (parent, args) => {
+    data: async (_, args: DataArgs) => {
       const { id } = args;
       const data = await DataService.findOne(id);
       return data;
